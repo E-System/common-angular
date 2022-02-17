@@ -48,4 +48,18 @@ export class FileService {
       anchor.click();
     }
   }
+
+  openBlobFile(blob: Blob, target?: string) {
+    if (window.navigator.msSaveOrOpenBlob) {
+      window.navigator.msSaveOrOpenBlob(new Blob([blob], {type: blob.type.toString()}));
+    } else {
+      const url = window.URL.createObjectURL(blob);
+      const anchor = document.createElement('a');
+      if (target) {
+        anchor.target = target;
+      }
+      anchor.href = url;
+      anchor.click();
+    }
+  }
 }
