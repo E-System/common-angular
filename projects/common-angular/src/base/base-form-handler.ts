@@ -1,10 +1,15 @@
 import {FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
+import {OnInit} from '@angular/core';
 
-export abstract class BaseFormComponent {
+export abstract class BaseFormHandler implements OnInit {
 
   isLoading = false;
-  form: FormGroup = this.buildForm();
+  form: FormGroup;
+
+  ngOnInit() {
+    this.form = this.buildForm();
+  }
 
   request(observable: Observable<any>,
           next: ((value: any) => void),
