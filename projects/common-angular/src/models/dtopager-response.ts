@@ -1,6 +1,6 @@
 import {DTOPager} from './dtopager';
 
-export interface DTOResponse<T> {
-  data: T;
+export interface DTOPagerResponse<T> {
+  data: T[];
   pager: DTOPager<T>;
 }

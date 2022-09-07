@@ -3,6 +3,8 @@
  */
 
 export * from './base/public-api';
+export * from './components/public-api';
+export * from './config/public-api';
 export * from './directives/public-api';
 export * from './models/public-api';
 export * from './pipes/public-api';
