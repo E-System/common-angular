@@ -24,9 +24,6 @@ import {DragAndDropDirective} from './directives/drag-and-drop/drag-and-drop.dir
     EnvironmentPipe,
     TimeFormatPipe,
     VarDirective,
-    // EntityPageComponent,
-    ColHeaderPipe,
-    // EntityComponent
   ],
   imports: [],
   exports: [
@@ -38,11 +35,7 @@ import {DragAndDropDirective} from './directives/drag-and-drop/drag-and-drop.dir
     PluralizePipe,
     EnvironmentPipe,
     TimeFormatPipe,
-    VarDirective,
-    // EntityPageComponent,
-    ColHeaderPipe,
-    // EntityComponent,
-    ErrorStateMatcher
+    VarDirective
   ]
 })
 export class CommonAngularModule {

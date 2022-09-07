@@ -12,6 +12,7 @@
       "element",
       "es",
       "kebab-case"
-    ]
+    ],
+    "directive-class-suffix": [true, "Handler"]
   }
 }

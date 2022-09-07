@@ -1,7 +1,8 @@
 import {FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
-import { OnInit} from '@angular/core';
+import {Directive, OnInit} from '@angular/core';
 
+@Directive()
 export abstract class BaseFormHandler implements OnInit {
 
   isLoading = false;

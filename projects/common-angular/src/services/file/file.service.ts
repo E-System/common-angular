@@ -1,5 +1,7 @@
 import {Injectable} from '@angular/core';
 
+const windowNavigator = (window.navigator as any);
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,15 +18,15 @@ export class FileService {
     const req = new XMLHttpRequest();
     req.open('GET', fileUrl, true);
     req.responseType = 'blob';
-    req.onload = function(event) {
+    req.onload = (event) => {
       const blob = req.response;
       let contentType = '';
       const contentTypeHeader = req.getResponseHeader('content-type');
       if (contentTypeHeader) {
         contentType = contentTypeHeader;
       }
-      if (window.navigator.msSaveOrOpenBlob) {
-        window.navigator.msSaveOrOpenBlob(new Blob([blob], {type: contentType}), fileName);
+      if (windowNavigator) {
+        windowNavigator(new Blob([blob], {type: contentType}), fileName);
       } else {
         const link = document.createElement('a');
         document.body.appendChild(link);
@@ -38,8 +40,8 @@ export class FileService {
   }
 
   downloadBlobFile(blob: Blob, fileName: string) {
-    if (window.navigator.msSaveOrOpenBlob) {
-      window.navigator.msSaveOrOpenBlob(new Blob([blob], {type: blob.type.toString()}), fileName);
+    if (windowNavigator) {
+      windowNavigator(new Blob([blob], {type: blob.type.toString()}), fileName);
     } else {
       const url = window.URL.createObjectURL(blob);
       const anchor = document.createElement('a');
@@ -50,8 +52,8 @@ export class FileService {
   }
 
   openBlobFile(blob: Blob, target?: string) {
-    if (window.navigator.msSaveOrOpenBlob) {
-      window.navigator.msSaveOrOpenBlob(new Blob([blob], {type: blob.type.toString()}));
+    if (windowNavigator) {
+      windowNavigator(new Blob([blob], {type: blob.type.toString()}));
     } else {
       const url = window.URL.createObjectURL(blob);
       const anchor = document.createElement('a');
