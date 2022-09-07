@@ -1,6 +1,6 @@
 import {FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {OnInit} from '@angular/core';
+import { OnInit} from '@angular/core';
 
 export abstract class BaseFormHandler implements OnInit {
 

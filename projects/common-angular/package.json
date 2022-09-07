@@ -12,9 +12,11 @@
   "homepage": "https://github.com/E-System/common-angular",
   "author": "E-System",
   "license": "Apache License 2.0",
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
   "peerDependencies": {
     "@angular/common": "^13.1.0",
-    "@angular/core": "^13.1.0",
-    "tslib": "^2.3.0"
+    "@angular/core": "^13.1.0"
   }
 }
