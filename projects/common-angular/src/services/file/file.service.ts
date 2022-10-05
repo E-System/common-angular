@@ -20,41 +20,41 @@ export class FileService {
     req.responseType = 'blob';
     req.onload = (event) => {
       const blob = req.response;
-      let contentType = '';
-      const contentTypeHeader = req.getResponseHeader('content-type');
-      if (contentTypeHeader) {
-        contentType = contentTypeHeader;
-      }
-      if (windowNavigator) {
-        windowNavigator(new Blob([blob], {type: contentType}), fileName);
-      } else {
+      // let contentType = '';
+      // const contentTypeHeader = req.getResponseHeader('content-type');
+      // if (contentTypeHeader) {
+      //   contentType = contentTypeHeader;
+      // }
+      // if (windowNavigator) {
+      //   windowNavigator(new Blob([blob], {type: contentType}), fileName);
+      // } else {
         const link = document.createElement('a');
         document.body.appendChild(link);
         link.download = downloadFileName;
         link.href = window.URL.createObjectURL(blob);
         link.click();
         document.body.removeChild(link);
-      }
+      // }
     };
     req.send();
   }
 
   downloadBlobFile(blob: Blob, fileName: string) {
-    if (windowNavigator) {
-      windowNavigator(new Blob([blob], {type: blob.type.toString()}), fileName);
-    } else {
+    // if (windowNavigator) {
+    //   windowNavigator(new Blob([blob], {type: blob.type.toString()}), fileName);
+    // } else {
       const url = window.URL.createObjectURL(blob);
       const anchor = document.createElement('a');
       anchor.download = fileName;
       anchor.href = url;
       anchor.click();
-    }
+    // }
   }
 
   openBlobFile(blob: Blob, target?: string) {
-    if (windowNavigator) {
-      windowNavigator(new Blob([blob], {type: blob.type.toString()}));
-    } else {
+    // if (windowNavigator) {
+    //   windowNavigator(new Blob([blob], {type: blob.type.toString()}));
+    // } else {
       const url = window.URL.createObjectURL(blob);
       const anchor = document.createElement('a');
       if (target) {
@@ -62,6 +62,6 @@ export class FileService {
       }
       anchor.href = url;
       anchor.click();
-    }
+    // }
   }
 }
