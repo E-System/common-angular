@@ -1,6 +1,6 @@
 {
   "name": "es-common-angular",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/E-System/common-angular.git"
@@ -16,7 +16,7 @@
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "@angular/common": "^16.2.8",
-    "@angular/core": "^16.2.8"
+    "@angular/common": ">=16.2.8",
+    "@angular/core": ">=16.2.8"
   }
 }
