@@ -166,6 +166,5 @@
     }},
   "cli": {
     "analytics": false
-  },
-  "defaultProject": "common-angular"
+  }
 }
